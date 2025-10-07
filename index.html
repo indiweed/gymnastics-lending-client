@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Спортивный клуб "Lotos"</title>
+    <link rel="icon" href="images/logo.png" type="image/jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+    <link rel="preload" href="images/hero_background_1.png" as="image">
+    <link rel="preload" href="fonts/Manrope/Manrope-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=8822bfca-3640-4f11-9bda-78025dbd3ac2&lang=ru_RU" type="text/javascript">
+    </script>
+    <script>
+        function init() {
+            var map = new ymaps.Map("footer_contacts_map", {
+                center: [59.961776, 30.296289],
+                zoom: 15
+            });
+            var placemark = new ymaps.Placemark([59.961776, 30.296289]);
+    
+            map.geoObjects.add(placemark);
+        }
+        ymaps.ready(init);
+    </script>
+</head>
+<body>
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+    <div class="intro">
+        <header class="header">
+            <div class="burger_overlay"></div>
+            <div class="header_container">
+                <div class="logo_container">
+                    <img src="images/logo-gradient.png" alt="" class="logo">
+                    <p>Спортивный клуб <br> "Lotos" <br> г. Санкт-Петербург</p>
+                </div>            
+                <div class="header_navbar_container">
+                    <a href="#school">О школе</a>
+                    <a href="#competitions">Соревнования</a>
+                    <a href="#contact_us">Контакты</a>
+                </div>
+                <div class="header_phone_container">
+                    <a class="header_phone" href="#">+7 812 354-24-50</a>
+                    <a class="header_phone" href="#">+7 812 355-25-66</a>
+                </div>
+                <button class="burger_btn"><img src="images/burger.svg" alt="Меню"></button>
+            </div>
+        </header>
+        <div class="intro-slider uk-visible-toggle uk-dark" uk-slider="center: true; autoplay: true; autoplay-interval: 2000">
+            <ul class="uk-slider-items uk-flex">
+                <li class="uk-width-1-1">
+                    <div class="uk-cover-container">
+                        <img src="images/hero_main.jpg" alt="" fetchpriority="high">
+                        <div class="overlay"></div>
+                        <div class="uk-position-center-left">
+                            <div class="club_info" id="intro_section_first_slide">
+                                <h2 class="club_desc_up">С любовью <br> к гимнастике <br> и детям!</h2>
+                                <form action="https://wa.me/79273109454" target="_blank" class="trial_session_form_slider">
+                                    <button class="trial_session_btn intro_button">
+                                        Записаться на пробное занятие
+                                    </button>
+                                </form>
+                                <!--<span class="club_desc_down">Растим чемпионов с любовью и заботой</span>-->
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="uk-width-1-1">
+                    <div class="uk-cover-container">
+                        <img src="images/professionals.jpg" alt="" fetchpriority="low">
+                        <div class="overlay"></div>
+                        <div class="uk-position-center-left">
+                            <div class="club_info">
+                                <h2 class="club_desc_up">Команда профессионалов</h2>
+                                <span class="club_desc_down">Тренеры - мастера спорта <br> с педагогическим образованием</span>
+                                <form action="https://wa.me/79273109454" target="_blank" class="trial_session_form_slider">
+                                    <button class="trial_session_btn intro_button">
+                                        Записаться на пробное занятие
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="uk-width-1-1">
+                    <div class="uk-cover-container">
+                        <img src="images/studio.jpeg" alt="" fetchpriority="auto">
+                        <div class="overlay"></div>
+                        <div class="uk-position-center-left">
+                            <div class="club_info">
+                                <h2 class="club_desc_up">Просторный <br> зал</h2>
+                                <span class="club_desc_down">4 площадки <br> с ковровым покрытием</span>
+                                <form action="https://wa.me/79273109454" target="_blank" class="trial_session_form_slider">
+                                    <button class="trial_session_btn intro_button">
+                                        Записаться на пробное занятие
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="intro_arrows">
+                <a class="uk-position-center-left uk-margin-medium-left uk-position-small uk-hidden-hoveruk-intro-slider-btn" uk-slider-item="previous"><img src="images/intro_prev.svg" alt=""></a>
+                <a class="uk-position-center-right uk-margin-medium-right uk-position-small uk-hidden-hoveruk-intro-slider-btn" uk-slider-item="next"><img src="images/intro_next.svg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="burger_menu">
+        <div class="burger_top">
+            <img src="images/logo-gradient.png" alt="Логотип">
+            <button class="burger_close"><img src="images/burger_close.svg" alt="Закрыть"></button>
+        </div>
+        <div class="burger_nav_menu">
+            <ul>
+                <li><a href="#school">О школе</a></li>
+                <li><a href="#competitions">Соревнования</a></li>
+                <li><a href="#footer_contacts">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="burger_phone"><a href="#">+7 812 354-24-50</a></div>
+        <div class="burger_contacts_social">
+            <a target="_blank" href="https://www.instagram.com/sk_zhemchuzhina_ufa?igsh=MTJ5bW44b3E5bGhhdA=="><img src="images/inst_burger.png" alt="instagram"></a>
+            <span id="inst_info">*</span>
+            <a target="_blank" href="https://wa.me/79273109454"><img src="images/burger_whatsapp.svg" alt="whatsapp"></a>
+        </div>
+    </div>
+        <main class="main">
+            <div class="about_us_title" id="school">
+                Почему выбирают нас?
+            </div>
+            <div class="about_us_container">
+                <div class="about_us_info">
+                    <ul class="about_us_ul">
+                        <li class="info_card">
+                            <img src="images/infoicon1.svg" alt="">
+                            <div class="info_card_text" id="info_1">Наш приоритет – растить счастливых <br> и здоровых чемпионок</div>
+                                
+                        </li>
+                        <li class="info_card">
+                            <img src="images/infoicon3.svg" alt="">
+                            <div class="info_card_text" id="info_2">Успешное выполнение спортивных разрядов</div>
+                        </li>
+                        <li class="info_card">
+                            <img src="images/infoicon2.svg" alt="">
+                            <div class="info_card_text" id="info_3">Соревнования городского, регионального <br> и всероссийского уровня</div>
+                        </li>
+                        <li class="info_card">
+                            <img src="images/infoicon4.svg" alt="">
+                            <div class="info_card_text" id="info_4">Просторный зал: <br> 4 площадки <br> с ковровым покрытием</div>
+                        </li>
+                    </ul>
+                    <form class="form_trial" action="https://wa.me/79273109454" target="_blank" class="trial_session_form">
+                       <button class="trial_session_btn btn_mobile" id="trial_session_video">
+                           Записаться на пробное занятие
+                       </button>
+                    </form>
+                </div>
+                <div class="image_container">
+                    <img src="images/about_us.jpg" alt="" class="abouts_image">
+                    <form action="https://wa.me/79273109454" target="_blank"  class="trial_session_form">
+                        <button class="trial_session_btn btn_desktop" id="trial_session_video">
+                            Записаться на пробное занятие
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="slider_menu" id="competitions">
+                <div class="slider_menu_container">
+                    <h2 class="slider_menu_title">
+                        Растим чемпионов
+                    </h2>
+                    <div class="uk uk-mobile uk-position-relative uk-visible-toggle uk-light" uk-slider="center: true; autoplay: true; autoplay-interval: 2000">
+                        <div class="uk-slider-items uk-flex">
+                            <div class="uk-width-1-1">
+                                <div class="uk-panel">
+                                    <img src="images/champions_3.png" loading="eager" alt="">
+                                </div>
+                            </div>
+                            <div class="uk-width-1-1">
+                                <div class="uk-panel">
+                                    <img src="images/champions_2.png" loading="eager" alt="">
+                                </div>
+                            </div>
+                            <div class="uk-width-1-1">
+                                <div class="uk-panel">
+                                    <img src="images/champions_4.png" loading="eager" alt="">
+                                </div>
+                            </div>
+                            <div class="uk-width-1-1">
+                                <div class="uk-panel">
+                                    <img src="images/champions_5.png" loading="eager" alt="">
+                                </div>
+                            </div>
+                            <div class="uk-width-1-1">
+                                <div class="uk-panel">
+                                    <img src="images/champions_6.png" loading="eager" alt="">
+                                </div>
+                            </div>
+                            <div class="uk-width-1-1">
+                                <div class="uk-panel">
+                                    <img src="images/champions_7.png" loading="eager" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <a class="uk-position-center-left uk-position-small uk-hidden-hover"uk-slider-item="previous"><img src="images/prevbtn_mobile.svg" alt="Назад"></a>
+                        <a class="uk-position-center-right uk-position-small uk-hidden-hover"uk-slider-item="next"><img src="images/arrowbtn_mobile.svg" alt="Вперед"></a>
+                    </div>
+                    <div class="slider_menu_info_list">
+                        <ul class="slider_menu_info_ul">
+                            <li class="slider_menu_info_item">
+                                <h2 id="master_of_sports">5 мастеров спорта</h2>
+                                <!--<p>мастера спорта России</p>-->
+                            </li>
+                            <li class="slider_menu_info_item">
+                                <h2 id="candidates_for_master_of_sports">32 кандидата в мастера спорта</h2>
+                                <!--<p>кандидаты в мастера спорта</p>-->
+                            </li>
+                            <li class="slider_menu_info_item">
+                                <h2>Победители и призеры</h2>
+                                <p>соревнований регионального <br> и всероссийского уровня</p>
+                            </li>
+                            <li class="slider_menu_info_item">
+                                <h2>Участницы чемпионата, кубка и первенства России</h2>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uk uk-desktop uk-position-relative uk-visible-toggle uk-light custom-slider" uk-slider="center: true; autoplay: true; autoplay-interval: 2000">
+                    <div class="uk-slider-items">
+                        <div class="uk-width-1-2">
+                            <div class="uk-panel">
+                                <img src="images/champions_3.png" loading="eager" alt="">
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <div class="uk-panel">
+                                <img src="images/champions_2.png" loading="eager" alt="">
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <div class="uk-panel">
+                                <img src="images/champions_4.png" loading="eager" alt="">
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <div class="uk-panel">
+                                <img src="images/champions_5.png" loading="eager" alt="">
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <div class="uk-panel">
+                                <img src="images/champions_6.png" loading="eager" alt="">
+                            </div>
+                        </div>
+                        <div class="uk-width-1-2">
+                            <div class="uk-panel">
+                                <img src="images/champions_7.png" loading="eager" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <a class="uk-position-center-left uk-position-small uk-hidden-hover"uk-slider-item="previous"><img src="images/prev.svg" alt="Назад"></a>
+                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" uk-slider-item="next"><img src="images/next.svg" alt="Вперед"></a>
+                </div>
+                <div class="button-container">
+                    <form action="https://wa.me/79273109454" target="_blank" class="trial_session_form_slider">
+                        <button class="trial_session_btn" id="trial_session_slider">
+                            Записаться на пробное занятие
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="training_program">
+                <div class="training_program_info">
+                    <div class="training_program_info_text">
+                        <h2 class="training_program_info_title">Занятия <br> для девочек от 3-х лет</h2>
+                        <ul class="training_program_info_ul">
+                            <li class="training_item">
+                                Занятия в игровой форме!
+                            </li>                                        
+                            <li class="training_item">
+                                Тренер с высшим <br> психологическим <br> и педагогическим образованием
+                            </li>
+                            <li class="training_item">
+                                Комфортные условия <br> для тренировок
+                            </li>
+                        </ul>
+                        <div class="button-container">
+                            <form action="https://wa.me/79273109454" target="_blank" class="trial_session_form">
+                                <button class="trial_session_btn" id="trial_session_program">
+                                    Записаться на пробное занятие
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="training_program_info_img training_program_desktop">
+                        <img src="images/train_prog.png" alt="">
+                        <img src="images/train_program_second_img.png" alt="">
+                    </div>
+                    <div class="training_program_info_img training_program_mobile">
+                        <div class="uk uk-mobile uk-position-relative uk-visible-toggle uk-light" uk-slider="center: true; autoplay: true; autoplay-interval: 2000">
+                            <div class="uk-slider-items uk-flex">
+                                <div class="uk-width-1-1">
+                                    <div class="uk-panel">
+                                        <img src="images/training_program_photo_2.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="uk-panel">
+                                        <img src="images/training_program_photo_1.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="uk-panel">
+                                        <img src="images/training_program_photo_2.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-1">
+                                    <div class="uk-panel">
+                                        <img src="images/training_program_photo_3.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="uk-position-center-left uk-position-small uk-hidden-hover"uk-slider-item="previous"><img src="images/prevbtn_mobile.svg" alt="Назад"></a>
+                            <a class="uk-position-center-right uk-position-small uk-hidden-hover"uk-slider-item="next"><img src="images/arrowbtn_mobile.svg" alt="Вперед"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-section" id="contact_us">
+                <div class="contact-container">
+                    <h2 class="contact-title">Связаться с нами</h2>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-text">
+                                    <h3>Телефон</h3>
+                                    <a href="tel:+79273109454">+7 927 310-94-54</a>
+                                    <a href="tel:+79872544658">+7 987 254-46-58</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-text">
+                                    <h3>Адрес</h3>
+                                    <p>г. Санкт-Петербург</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-text">
+                                    <h3>Время работы</h3>
+                                    <p>Пн-Пт: 9:00-21:00</p>
+                                    <p>Сб-Вс: 10:00-19:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <form class="contact-form-container">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Ваше имя" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" placeholder="Ваш телефон" required>
+                                </div>
+                                <div class="form-group">
+                                    <textarea placeholder="Ваше сообщение" rows="4"></textarea>
+                                </div>
+                                <button type="submit" class="contact-submit-btn">Отправить сообщение</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </main>
+        <footer class="footer" id="footer_contacts">
+            <div class="footer_container">
+                <div class="footer_contacts_container">
+                    <div class="footer_contacts_wrapper">
+                        <div class="footer_logo_container">
+                            <div class="logo_container">
+                                <img src="images/logo-gradient.png" alt="" class="logo">
+                                <p>Спортивный клуб <br> "Lotos" <br> г. Санкт-Петербург</p>
+                            </div> 
+                        </div>
+                        <h1 class="footer_contacts_title">Контакты</h1>
+                        <div class="footer_phone_numbers">
+                            <a href="#" class="footer_number footer_number_up">+7 812 354-24-50</a>
+                            <a href="#" class="footer_number footer_number_down">+7 812 355-25-66</a>
+                        </div>
+                        <div class="footer_contacts_address">
+                            <h2>Приходите в гости:</h2>
+                            <p>г. Санкт-Петербург, <br> Чкаловский проспект 15М</p>
+                        </div>
+                        <div class="footer_contacts_social">
+                            <a id="instagram" target="_blank" href="https://www.instagram.com/sk_zhemchuzhina_ufa?igsh=MTJ5bW44b3E5bGhhdA=="><img src="images/instagram.webp" alt="instagram"></a>
+                            <span id="inst_info">*</span>
+                            <a id="whatsapp" target="_blank" href="https://wa.me/79273109454"><img src="images/simple-icons_whatsapp.svg" alt="whatsapp"></a>
+                        </div>
+                        <p id="inst_info_text">*Запрещенная на территории Российской Федерации организация</p> 
+                    </div>
+                </div>
+                <div id="footer_contacts_map" style="width: 50% ; height: 100%;"></div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js" defer></script>
+    <script src="services/loading.js"></script>
+    <script src="services/slider.js"></script>
+    <script src="services/burger_menu.js"></script>
+    <script src="services/after_loading.js"></script>
+</body>
+</html>

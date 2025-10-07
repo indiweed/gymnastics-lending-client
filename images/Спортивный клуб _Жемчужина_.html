@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Спортивный клуб "Жемчужина"</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/css/uikit.min.css" />
+    <link rel="icon" href="images/logo.svg" type="image/svg">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const clubInfo = document.querySelector('.club_info');
+            setTimeout(() => {
+                clubInfo.classList.add('visible');
+            }, 100);
+        });
+    </script>
+    <script>
+        UIkit.slider(element, {
+            autoplay: true,
+        });
+    </script>
+    <script src="services/slider.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=8822bfca-3640-4f11-9bda-78025dbd3ac2&lang=ru_RU" type="text/javascript">
+    </script>
+    <script>
+        function init() {
+            var map = new ymaps.Map("footer_contacts_map", {
+                center: [54.711781, 56.013569],
+                zoom: 15
+            });
+            var placemark = new ymaps.Placemark([54.711781, 56.013569], {
+                balloonContent: 'Жемчужина'
+            });
+    
+            map.geoObjects.add(placemark);
+        }
+        ymaps.ready(init);
+    </script>
+</head>
+<body>
+    <div class="body_wrapper">
+        <div class="intro">
+            <div class="intro_container">
+                <div class="intro_wrapper">
+                    <header class="header">
+                        <div class="header_container">
+                            <img src="images/logo_logo.png" alt="Логотип" class="logo">               
+                            <div class="header_navbar_wrap">
+                                <a href="#school">О школе</a>
+                                <a href="#competitions">Соревнования</a>
+                                <a href="#footer_contacts">Контакты</a>
+                            </div>
+                            <div class="header_phone_container">
+                                <a class="header_phone" href="tel:+7 927 310 94 54">+7 927 310-94-54</a>
+                                <a class="header_phone" href="tel:+7 987 254 46 58">+7 987 254-46-58</a>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="intro-slider uk-visible-toggle uk-dark" uk-slider="center: true; autoplay: true; autoplay-interval: 2000">
+                        <ul class="uk-slider-items uk-flex">
+                            <li class="uk-width-1-1">
+                                <div class="uk-cover-container">
+                                    <img src="images/hero_background_1.png" alt="">
+                                    <div class="overlay"></div>
+                                    <div class="uk-position-center-left">
+                                        <div class="club_info">
+                                            <h1 class="club_desc_up">С любовью к гимнастике и детям!</h1>
+                                            <!--<span class="club_desc_down">Растим чемпионов с любовью и заботой</span>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="uk-width-1-1">
+                                <div class="uk-cover-container">
+                                    <img src="images/hero_background_2.png" alt="">
+                                    <div class="overlay"></div>
+                                    <div class="uk-position-center-left">
+                                        <div class="club_info">
+                                            <h1 class="club_desc_up">Команда профессионалов</h1>
+                                            <span class="club_desc_down">Тренеры - мастера спорта с педагогическим образованием</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="uk-width-1-1">
+                                <div class="uk-cover-container">
+                                    <img src="images/hero_background_3.png" alt="">
+                                    <div class="overlay"></div>
+                                    <div class="uk-position-center-left">
+                                        <div class="club_info">
+                                            <h1 class="club_desc_up">Просторный зал</h1>
+                                            <span class="club_desc_down">4 площадки с ковровым покрытием</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                            <a class="uk-position-center-left uk-margin-medium-left uk-position-small uk-hidden-hover uk-intro-slider-btn" uk-slider-item="previous"><img src="images/intro_prev.svg" alt=""></a>
+                            <a class="uk-position-center-right uk-margin-medium-right uk-position-small uk-hidden-hover uk-intro-slider-btn" uk-slider-item="next"><img src="images/intro_next.svg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <main class="main">
+            <div class="main_container">
+                <div class="main_wrapper">
+                    <div class="about_us_title" id="school">
+                        Почему выбирают нас?
+                    </div>
+                    <div class="about_us_container">
+                        <div class="about_us_info">
+                            <ul class="about_us_ul">
+                                <li class="info_card">
+                                    <img src="images/infoicon1.svg" alt="">
+                                    <div class="info_card_text" id="info_1">Наш приоритет – растить счастливых <br> и здоровых чемпионок</div>
+                                        
+                                </li>
+                                <li class="info_card">
+                                    <img src="images/infoicon3.svg" alt="">
+                                    <div class="info_card_text" id="info_2">Успешное выполнение спортивных разрядов</div>
+                                </li>
+                                <li class="info_card">
+                                    <img src="images/infoicon2.svg" alt="">
+                                    <div class="info_card_text" id="info_3">Соревнования городского, регионального <br> и всероссийского уровня</div>
+                                </li>
+                                <li class="info_card">
+                                    <img src="images/infoicon4.svg" alt="">
+                                    <div class="info_card_text" id="info_4">Просторный зал: <br> 4 площадки <br> с ковровым покрытием</div>
+                                </li>
+                            </ul>
+                            <form class="form_trial" action="https://wa.me/79273109454" target="_blank"  class="trial_session_form">
+                               <button class="trial_session_btn btn_mobile" id="trial_session_video">
+                                   Записаться на пробное занятие
+                               </button>
+                            </form>
+                        </div>
+                        <div class="video_container">
+                            <video class="video" autoplay muted loop>
+                                <source src="images/videoo.mp4" type="video/mp4">
+                            </video>
+                            <form action="https://wa.me/79273109454" target="_blank"  class="trial_session_form">
+                                <button class="trial_session_btn btn_desktop" id="trial_session_video">
+                                    Записаться на пробное занятие
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="slider_menu" id="competitions">
+                        <div class="slider_menu_container">
+                            <h1 class="slider_menu_title">
+                                Растим чемпионов
+                            </h1>
+                            <!--<img class="carousel_mobile" src="./images/carousel2.svg" alt="">-->
+                            <div class="uk uk-mobile uk-position-relative uk-visible-toggle uk-light" uk-slider="center: true" autoplay>
+                                <div class="uk-slider-items uk-flex">
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/champions_1.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/champions_2.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/champions_3.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/champions_4.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/champions_5.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/champions_6.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="uk-position-center-left uk-position-small uk-hidden-hover" uk-slider-item="previous"><img src="images/prevbtn_mobile.svg" alt="Назад"></a>
+                                <a class="uk-position-center-right uk-position-small uk-hidden-hover" uk-slider-item="next"><img src="images/arrowbtn_mobile.svg" alt="Вперед"></a>
+                            </div>
+                        <div class="slider_menu_info_list">
+                                <ul class="slider_menu_info_ul">
+                                    <li class="slider_menu_info_item">
+                                        <h2 id="master_of_sports">5 мастеров спорта</h2>
+                                        <!--<p>мастера спорта России</p>-->
+                                    </li>
+                                    <li class="slider_menu_info_item">
+                                        <h2 id="candidates_for_master_of_sports">32 кандидата в мастера спорта</h2>
+                                        <!--<p>кандидаты в мастера спорта</p>-->
+                                    </li>
+                                    <li class="slider_menu_info_item">
+                                        <h2>Победители и призеры</h2>
+                                        <p>соревнований регионального <br> и всероссийского уровня</p>
+                                    </li>
+                                    <li class="slider_menu_info_item">
+                                        <h2>Участницы чемпионата, кубка и первенства России</h2>
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                    <div class="uk uk-desktop uk-position-relative uk-visible-toggle uk-light custom-slider" uk-slider="center: true">
+                            <div class="uk-slider-items uk-grid uk-flex-center">
+                                <div class="uk-width-1-2">
+                                    <div class="uk-panel">
+                                        <img src="images/champions_1.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-panel">
+                                        <img src="images/champions_2.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-panel">
+                                        <img src="images/champions_3.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-panel">
+                                        <img src="images/champions_4.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-panel">
+                                        <img src="images/champions_5.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                                <div class="uk-width-1-2">
+                                    <div class="uk-panel">
+                                        <img src="images/champions_6.png" loading="eager" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="uk-position-center-left uk-position-small uk-hidden-hover" uk-slider-item="previous"><img src="images/prev.svg" alt="Назад"></a>
+                            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href uk-slider-item="next"><img src="images/next.svg" alt="Вперед"></a>
+                    </div>
+                    <div class="button-container">
+                            <form action="https://wa.me/79273109454" target="_blank" class="trial_session_form_slider">
+                                <button class="trial_session_btn" id="trial_session_slider">
+                                    Записаться на пробное занятие
+                                </button>
+                            </form>
+                    </div>
+                    </div>
+                    <div class="training_program">
+                        <div class="training_program_container">
+                            <div class="training_program_info">
+                                <div class="training_program_info_text">
+                                    <h1 class="training_program_info_title">Занятия <br> для девочек от 3-х лет</h1>
+                                    <ul class="training_program_info_ul">
+                                        <li class="training_item">
+                                            Занятия в игровой форме!
+                                        </li>                                        
+                                        <li class="training_item">
+                                            Тренер с высшим <br> психологическим <br> и педагогическим образованием
+                                        </li>
+                                        <li class="training_item">
+                                            Комфортные условия <br> для тренировок
+                                        </li>
+                                    </ul>
+                                    <div class="button-container">
+                                        <form action="https://wa.me/79273109454" target="_blank" class="trial_session_form">
+                                            <button class="trial_session_btn" id="trial_session_program">
+                                                Записаться на пробное занятие
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="training_program_info_img">
+                                    <img src="images/train_progr.svg" alt="">
+                                </div>
+                            </div>
+                            <!--<div class="training_photos">
+                                <div class="training_photos_three">
+                                    <img src="/images/training_photos_three.svg" alt="">
+                                    <img src="/images/training_photos_three.svg" alt="">
+                                    <img src="/images/training_photos_three.svg" alt="">
+                                </div>
+                                <div class="training_photos_two">
+                                    <img src="/images/training_photos_two.svg" alt="">
+                                    <img src="/images/training_photos_two.svg" alt="">
+                                </div>
+                                <div class="training_photos_three">
+                                    <img src="/images/training_photos_three.svg" alt="">
+                                    <img src="/images/training_photos_three.svg" alt="">
+                                    <img src="/images/training_photos_three.svg" alt="">
+                                </div>
+                            </div>-->
+                        </div>
+                    </div>
+                    <div class="feedback">
+                        <div class="feedback_container_desktop">
+                            <p class="feedback_title">
+                                Отзывы <br> родителей
+                            </p>
+                            <div class="feedback_screenshots_desktop">
+                                <img src="images/feedback_1.png" alt="" id="feedback_1">
+                                <img src="images/feedback_2.png" alt="" id="feedback_2">
+                                <img src="images/feedback_3.png" alt="" id="feedback_3">
+                            </div>
+                        </div>
+                        <div class="feedback_container_mobile">
+                            <p class="feedback_title">
+                                Отзывы <br> родителей
+                            </p>
+                            <div class="feedback_screenshots_mobile uk-position-relative uk-visible-toggle uk-light" uk-slider="center: true" autoplay>
+                                <div class="uk-slider-items uk-flex">
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/feedback_1.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/feedback_2.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-panel">
+                                            <img src="images/feedback_3.png" loading="eager" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="uk-position-center-left uk-position-small uk-hidden-hover" uk-slider-item="previous"><img src="images/prevbtn_mobile.svg" alt="Назад"></a>
+                                <a class="uk-position-center-right uk-position-small uk-hidden-hover" uk-slider-item="next"><img src="images/arrowbtn_mobile.svg" alt="Вперед"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer" id="footer_contacts">
+            <div class="footer_container">
+                <div class="footer_contacts_container">
+                    <div class="footer_contacts_wrapper">
+                        <img src="images/logo_logo.png" alt="Логотип">
+                        <h1 class="footer_contacts_title">Контакты</h1>
+                        <div class="footer_phone_numbers">
+                            <a href="tel: +7 927 310 94 54" class="footer_number footer_number_up">+7 927 310-94-54</a>
+                            <a href="tel: +7 987 254 46 58" class="footer_number footer_number_down">+7 987 254-46-58</a>
+                        </div>
+                        <div class="footer_contacts_address">
+                            <h2>Приходите в гости:</h2>
+                            <p>г. Уфа, ул Менделеева, <br> 136/5 к11</p>
+                        </div>
+                        <div class="footer_contacts_social">
+                            <a id="instagram" target="_blank" href="https://www.instagram.com/sk_zhemchuzhina_ufa?igsh=MTJ5bW44b3E5bGhhdA=="><img src="images/instagram.webp" alt="instagram"></a>
+                            <span id="inst_info">*</span>
+                            <a id="whatsapp" target="_blank" href="https://wa.me/79273109454"><img src="images/simple-icons_whatsapp.svg" alt="whatsapp"></a>
+                        </div>
+                        <p id="inst_info_text">*Запрещенная на территории Российской Федерации организация</p>
+                    </div>
+                </div>
+                <div id="footer_contacts_map" style="width: 50% ; height: 100%;"></div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.22/dist/js/uikit-icons.min.js"></script>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+        ym(99895288, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/99895288" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
